@@ -15,7 +15,12 @@ public class SmartTv {
     public void aumentarVolume(){
         volume++;
     }
-
+    /**
+     * Método que recebe um volume como parâmetro
+     * e retorna a soma do volume inicial com o volume passado 
+     * no parâmetro
+     * 
+     */
     public double aumentarVolumeDefinido(double volume2){
         volume += volume2;
         return volume;
