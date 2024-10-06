@@ -1,5 +1,13 @@
 import java.util.Locale;
 import java.util.Scanner;
+/**
+ * 
+ * @author Lucas Leite Severo
+ * @since 05/10/2024
+ * @category Classe que recebe informações bancarias passadas pelo usuário no terminal
+ * e imprime todas elas ao final da execução
+ * 
+ */
 
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
@@ -18,13 +26,15 @@ public class ContaTerminal {
         System.out.println("Por favor, digite o seu Segundo Nome:");
         String segundoNome = scanner.next();
 
+        // Usando o método concat para juntar os nomes em outra variavel
+        String nomeCompleto = primeiroNome.concat(" ").concat(segundoNome);
+
         System.out.println("Digite o saldo da sua Conta Bancária:");
         double saldoConta = scanner.nextDouble();
 
-        System.out.printf("Olá " + primeiroNome + " " + segundoNome + 
-        " obrigado por criar uma conta em nosso banco, " + 
+        System.out.printf("Olá %s obrigado por criar uma conta em nosso banco, " + 
         "sua agência é %s, conta %d e seu saldo %.2f já está disponível para saque.", 
-        numAgencia, numConta, saldoConta);
+        nomeCompleto, numAgencia, numConta, saldoConta);
 
         scanner.close();
         
