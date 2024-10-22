@@ -28,13 +28,8 @@ public class Livro {
     //Evitar que o retorno seja o endereco de memoria da variavel
     @Override
     public String toString() {
-//        return "Livro{" +
-//                "titulo='" + titulo + '\'' +
-//                ", autor='" + autor + '\'' +
-//                ", anoPublicacao=" + anoPublicacao +
-//                '}';
-        return "Titulo do livro: " + titulo + '\n'
-                + "Autor: " + autor + '\n'
-                + "Ano da Publicacao: " + anoPublicacao;
+        return "Titulo do livro: " + titulo + " | "
+                + " Autor: " + autor + " | "
+                + " Ano da Publicacao: " + anoPublicacao;
     }
 }

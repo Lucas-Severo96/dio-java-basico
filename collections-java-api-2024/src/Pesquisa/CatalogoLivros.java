@@ -7,7 +7,7 @@ public class CatalogoLivros {
     //atributos
     private List<Livro> livroList;
 
-    public CatalogoLivros(List<Livro> livroList) {
+    public CatalogoLivros() {
         this.livroList = new ArrayList<>();
     }
 
@@ -48,6 +48,7 @@ public class CatalogoLivros {
 
         if(!livroList.isEmpty()) {
             for (Livro l : livroList) {
+                //Retorna sempre o 1º livro encontrado na lista
                 if (l.getTitulo().equalsIgnoreCase(titulo)) {
                     livroPorTitulo = l;
                     break;
@@ -55,6 +56,22 @@ public class CatalogoLivros {
             }
         }
         return livroPorTitulo;
+    }
+
+    public static void main(String[] args) {
+
+        CatalogoLivros catalogoLivros = new CatalogoLivros();
+        catalogoLivros.adicionarLivro("Harry Potter", "J. k. Rowling", 2003);
+        catalogoLivros.adicionarLivro("Harry Potter", "J. k. Rowling", 2007);
+        catalogoLivros.adicionarLivro("Avengers", "Alex Irvine", 2016);
+        catalogoLivros.adicionarLivro("Thor Ragnarok", "Jim McCann", 2017);
+
+        System.out.println(catalogoLivros.pesquisarPorAutor("J. k. Rowling"));
+        System.out.println();
+        System.out.println(catalogoLivros.pesquisarPorIntervaloAnos(2010,2017));
+        System.out.println();
+        System.out.println(catalogoLivros.pesquisarPorTitulo("Harry Potter"));
+
     }
 
 }
