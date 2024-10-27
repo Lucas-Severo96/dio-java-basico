@@ -2,6 +2,7 @@ package functionalInterfaces;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 /**
  * Representa uma operação que aceita um argumento do tipo T e não retorna nenhum resultado.
@@ -23,10 +24,16 @@ public class ConsumerExample {
         };
         */
         //Usar o Consumer para imprimir numeros pares no Stream
+        /*
         numeros.forEach(n -> {
             if(n % 2 == 0) {
                 System.out.println(n);
             }
         });
+        */
+
+        Optional<String> optionalValue = Optional.ofNullable("01");
+        String result = optionalValue.orElseGet(() -> "Value from Supplier");
+        System.out.println(result);
     }
 }
